@@ -1,0 +1,15 @@
+'''
+Задание 3. Сформировать из введенного числа обратное по порядку входящих в него цифр и вывести на экран.
+Например, если введено число 3486, то надо вывести число 6843.
+'''
+
+user_number = input('Введите любое положительное число:\n>>> ')
+len_number = len(user_number) # длина строки нужна для количества переборов
+user_number = int(user_number)
+divizion_tale = 0 # остаток от деления
+new_number = 0
+for i in range(len_number):
+    divizion_tale = user_number % 10
+    user_number = user_number // 10
+    new_number = new_number * 10 + divizion_tale
+print(str(new_number).zfill(len_number))

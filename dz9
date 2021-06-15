@@ -1,0 +1,26 @@
+'''
+Задание 9. Среди натуральных чисел, которые были введены, найти наибольшее по сумме цифр.
+Вывести на экран это число и сумму его цифр.
+'''
+
+import random
+random_list = []
+for i in range(0, 7):
+    random_list.append(random.randint(1, 10000))
+print('Последовательность чисел: ', random_list)
+ls_sum = [] # список для сумм элеиентов последовательности
+for i in random_list:
+    el_sum = 0
+    for j in str(i):
+        el_sum += int(j)
+    ls_sum.append(el_sum)
+
+ls_count = 0 # счетчик элементов списка максимальных чисел
+count_max = 0 # номер максимального элемента списка
+max_num = ls_sum[0]
+for i in ls_sum:
+    ls_count += 1
+    if i > max_num:
+        max_num = i
+        count_max = ls_count
+print(f'Число последовательности с наибольшей суммой цифр: {random_list[count_max - 1]}, сумма его цифр: {max_num}')

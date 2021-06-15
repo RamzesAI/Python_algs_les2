@@ -1,0 +1,18 @@
+'''
+Задание 2. Посчитать четные и нечетные цифры введенного натурального числа.
+Например, если введено число 34560, то у него 3 четные цифры (4, 6 и 0) и 2 нечетные (3 и 5).
+'''
+user_number = input('Введите любое натуральное число:\n>>>')
+count_numbers_neg = 0
+count_numbers_pos = 0
+positive_list = []
+negative_list = []
+for i in user_number:
+    if int(i) % 2 == 0:
+        count_numbers_pos +=1
+        positive_list.append(i)
+    else:
+        count_numbers_neg +=1
+        negative_list.append(i)
+print(f'Всего четных цифр: {count_numbers_pos}\nИх список: {", ".join(positive_list)}')
+print(f'Всего нечетных цифр: {count_numbers_neg}\nИх список: {", ".join(negative_list)}')
