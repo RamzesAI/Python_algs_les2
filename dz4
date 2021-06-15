@@ -1,0 +1,12 @@
+'''
+Задание 4. Найти сумму n элементов следующего ряда чисел: 1 -0.5 0.25 -0.125 ...
+Количество элементов (n) вводится с клавиатуры.
+'''
+
+number_of_elements = int(input('Введите количество элементов: '))
+el_of_range = 1
+result = 0
+for i in range(number_of_elements):
+    result = result + el_of_range
+    el_of_range *= -0.5
+print(result)

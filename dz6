@@ -1,0 +1,26 @@
+'''
+Задание 6. В программе генерируется случайное целое число от 0 до 100.
+Пользователь должен его отгадать не более чем за 10 попыток.
+После каждой неудачной попытки должно сообщаться больше или меньше введенное пользователем число, чем то,
+что загадано. Если за 10 попыток число не отгадано, то вывести загаданное число.
+'''
+import random
+hidden_number = random.randint(1, 100)
+print('Угадай число!')
+count_of_try = 0
+users_try = 10
+while count_of_try < 10:
+    user_answer = int(input('Твой ответ: '))
+    if user_answer == hidden_number:
+        print('Поздравляю с победой!')
+        break
+    if user_answer > hidden_number:
+        print('Загаданное число меньше')
+    if user_answer < hidden_number:
+        print('Загаданное число больше')
+    count_of_try += 1
+    users_try -= 1
+    print(f'Количество оставшихся попыток: {users_try}')
+    if users_try == 0:
+        print(f'Загаданное число: {hidden_number}')
+        print('Повезет в следующий раз')

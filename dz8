@@ -1,0 +1,17 @@
+'''
+Задание 8. Посчитать, сколько раз встречается определенная цифра в введенной последовательности чисел.
+Количество вводимых чисел и цифра, которую необходимо посчитать, задаются вводом с клавиатуры.
+'''
+import random
+n = int(input('Укажите необходимое количество чисел последовательности: '))
+random_list = []
+for i in range(1, n + 1):
+    random_list.append(random.randint(1, 10000))
+print('Последовательность чисел: ', *random_list)
+users_number = input('Цифра, которую необходимо проверить: ')
+count_of_number = 0
+for i in random_list:
+    for j in str(i):
+        if j == users_number:
+            count_of_number += 1
+print(f'Цифра {users_number} встречается {count_of_number} раз')
